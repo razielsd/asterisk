@@ -2,11 +2,14 @@ version: "2.1"
 services:
 
     asterisk:
-        image: callcenter.asterisk.dev
+        image: rz-callcenter.asterisk.dev
         container_name: dev-asterisk
         build:
             context: docker
             dockerfile: asterisk/Dockerfile
+        volumes:
+            - ./docker/keys/cert.pem:/etc/asterisk/keys/localhost.cert.pem
+            - ./docker/keys/cert.key:/etc/asterisk/keys/localhost.key.pem
         ports:
         - "5060:5060/udp"
         - "39000-39050:39000-39050/udp"
