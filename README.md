@@ -10,3 +10,6 @@ Open `pjsip.conf` and `pjsip_wizard.conf` and change `192.168.1.66` to your netw
 # Users
  * 5000 and 5002 - webrtc users
  * 5001 and 5003 - sip users
+
+# Attention
+Asterisk with module sip can't be dockerized
